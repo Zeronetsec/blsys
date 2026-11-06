@@ -1,5 +1,7 @@
 // https://github.com/Zeronetsec/blsys
 
+package runcmd
+
 import (
     "strconv"
     "strings"
