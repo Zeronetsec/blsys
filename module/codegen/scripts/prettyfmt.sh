@@ -5,7 +5,13 @@ function blsys::prettyfmt() {
     local val="${2:-'<noset>'}"
 
     if [[ "${1}" == '--print-init' ]]; then
+        printf '\n'
         echo -e "\x1b[0mOptions:"
+        return 0
+    fi
+
+    if [[ "${1}" == '--print-endline' ]]; then
+        printf '\n'
         return 0
     fi
 
