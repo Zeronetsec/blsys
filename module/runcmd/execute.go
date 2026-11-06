@@ -48,6 +48,7 @@ func Execute(args []string) {
 
     if noSuppress {
         if printMessage != "" {
+            printMessage = decodeESC(printMessage)
             fmt.Printf(
                 "%s[*] %s%s%s\n",
                 color.B, color.N, printMessage, color.N,
@@ -85,6 +86,7 @@ func Execute(args []string) {
     }
 
     if printMessage != "" {
+        printMessage = decodeESC(printMessage)
         fmt.Printf(
             "%s[*] %s%s%s",
             color.B, color.N, printMessage, color.N,
