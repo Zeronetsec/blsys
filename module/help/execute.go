@@ -119,7 +119,7 @@ func Execute(args []string) {
     )
 
     fmt.Printf(
-        "%s* %s--install %s--mode <direct|file> --package <input> [--backend <cmd...>]%s\n",
+        "%s* %s--install %s--mode <direct|file> --packages <input> [--backend <cmd...>]%s\n",
         color.DG, color.GG, color.CC, color.N,
     )
 }

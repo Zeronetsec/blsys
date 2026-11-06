@@ -25,7 +25,7 @@ func Execute(args []string) {
                     mode = strings.ToLower(args[i+1])
                     i++
                 }
-            case "--package":
+            case "--packages":
                 if i+1 < len(args) {
                     packageArg = args[i+1]
                     i++
