@@ -8,7 +8,7 @@ __appname__="$(
 
 __appsource__="$(
     command blsys \
-        --manifest "${__root__}/manifest.meta"
+        --manifest "${__root__}/manifest.meta" \
         --get 'appsource'
 )"
 
