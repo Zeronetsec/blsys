@@ -7,6 +7,11 @@ function blsys::finsdep () {
         dep="${1}"
     fi
 
+    if [[ ! -f "${dep}" ]]; then
+        echo -e "\x1b[1;31m[!] \x1b[0mFile: \x1b[0;32m${dep} \x1b[0mnot found!"
+        return 1
+    fi
+
     command blsys \
         --install \
         --mode 'file' \
