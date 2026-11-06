@@ -4,7 +4,7 @@ function blsys::prettyfmt() {
     local args="${1:-'<noset>'}"
     local val="${2:-'<noset>'}"
 
-    if [[ "${1}" == '--print-init' && "${2}" == '<noset>' ]]; then
+    if [[ "${1}" == '--print-init' ]]; then
         echo -e "\x1b[0mOptions:"
         return 0
     fi
