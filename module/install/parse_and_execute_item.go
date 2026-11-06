@@ -61,8 +61,8 @@ func parseAndExecuteItem(
             }
 
             fmt.Printf(
-                "%sTry: %s%s%s",
-                color.N, color.GG, pkgTarget, color.N,
+                "%s-> %sTry: %s%s%s",
+                color.DG, color.N, color.GG, pkgTarget, color.N,
             )
 
             exitCode := executeBackend(
@@ -86,8 +86,8 @@ func parseAndExecuteItem(
 
         if processedPkg == "" && allowSkip {
             fmt.Printf(
-                "%sSkipped...",
-                color.N,
+                "%s-> %sSkipped...",
+                color.DG, color.N,
             )
             return 0
         }
@@ -108,8 +108,8 @@ func parseAndExecuteItem(
         }
 
         fmt.Printf(
-            "%sTry: %s%s%s",
-            color.N, color.GG, pkgTarget, color.N,
+            "%s-> %sTry: %s%s%s",
+            color.DG, color.N, color.GG, pkgTarget, color.N,
         )
 
         exitCode := executeBackend(
@@ -141,9 +141,9 @@ func parseAndExecuteItem(
 
         if errCode == 0 {
             fmt.Printf(
-                "%sSymlink: %s%s %s-> %s%s%s\n",
-                color.N, color.GG, targetAlias, color.DG,
-                color.GG, targetPath, color.N,
+                "%s-> %sSymlink: %s%s %s-> %s%s%s\n",
+                color.DG, color.N, color.GG, targetAlias,
+                color.DG, color.GG, targetPath, color.N,
             )
         }
 
