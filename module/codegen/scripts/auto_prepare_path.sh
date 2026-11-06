@@ -1,4 +1,4 @@
-# https://github.com/Zeronetsec/Blsys
+# https://github.com/Zeronetsec/blsys
 
 function blsys::auto_prepare_path() {
     local -a target_path=(

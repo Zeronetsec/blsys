@@ -1,4 +1,4 @@
-# https://github.com/Zeronetsec/Blsys
+# https://github.com/Zeronetsec/blsys
 
 color_N="\x1b[0m"
 

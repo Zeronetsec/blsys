@@ -1,4 +1,4 @@
-# https://github.com/Zeronetsec/Blsys
+# https://github.com/Zeronetsec/blsys
 
 __appname__="$(
     command blsys \

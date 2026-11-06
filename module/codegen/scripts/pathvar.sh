@@ -1,4 +1,4 @@
-# https://github.com/Zeronetsec/Blsys
+# https://github.com/Zeronetsec/blsys
 
 __optdir__="$(command blsys --optdir)"
 __tmpdir__="$(command blsys --tmpdir)"
