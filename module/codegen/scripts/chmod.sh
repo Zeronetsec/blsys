@@ -57,7 +57,7 @@ function blsys::chmod() {
 
             command blsys \
                 --chmod \
-                --mode "${mode}"
+                --mode "${mode}" \
                 --target "${target}"
         fi
     done <<< "${input_data}"
