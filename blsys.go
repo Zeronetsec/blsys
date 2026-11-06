@@ -1,29 +1,29 @@
-// https://github.com/Zeronetsec/Blsys
+// https://github.com/Zeronetsec/blsys
 
 package main
 
 import (
     "os"
-    "github.com/Zeronetsec/Blsys/utils/invinput"
-    "github.com/Zeronetsec/Blsys/module/help"
-    "github.com/Zeronetsec/Blsys/module/copy"
-    "github.com/Zeronetsec/Blsys/module/move"
-    "github.com/Zeronetsec/Blsys/module/remove"
-    "github.com/Zeronetsec/Blsys/module/create"
-    "github.com/Zeronetsec/Blsys/module/fsclear"
-    "github.com/Zeronetsec/Blsys/module/chmod"
-    "github.com/Zeronetsec/Blsys/module/symlink"
-    "github.com/Zeronetsec/Blsys/module/lookpath"
-    "github.com/Zeronetsec/Blsys/module/codegen"
-    "github.com/Zeronetsec/Blsys/module/tmpdir"
-    "github.com/Zeronetsec/Blsys/module/bindir"
-    "github.com/Zeronetsec/Blsys/module/platform"
-    "github.com/Zeronetsec/Blsys/module/geteuid"
-    "github.com/Zeronetsec/Blsys/module/manifest"
-    "github.com/Zeronetsec/Blsys/module/find"
-    "github.com/Zeronetsec/Blsys/module/runcmd"
-    "github.com/Zeronetsec/Blsys/module/optdir"
-    "github.com/Zeronetsec/Blsys/module/install"
+    "github.com/Zeronetsec/blsys/utils/invinput"
+    "github.com/Zeronetsec/blsys/module/help"
+    "github.com/Zeronetsec/blsys/module/copy"
+    "github.com/Zeronetsec/blsys/module/move"
+    "github.com/Zeronetsec/blsys/module/remove"
+    "github.com/Zeronetsec/blsys/module/create"
+    "github.com/Zeronetsec/blsys/module/fsclear"
+    "github.com/Zeronetsec/blsys/module/chmod"
+    "github.com/Zeronetsec/blsys/module/symlink"
+    "github.com/Zeronetsec/blsys/module/lookpath"
+    "github.com/Zeronetsec/blsys/module/codegen"
+    "github.com/Zeronetsec/blsys/module/tmpdir"
+    "github.com/Zeronetsec/blsys/module/bindir"
+    "github.com/Zeronetsec/blsys/module/platform"
+    "github.com/Zeronetsec/blsys/module/geteuid"
+    "github.com/Zeronetsec/blsys/module/manifest"
+    "github.com/Zeronetsec/blsys/module/find"
+    "github.com/Zeronetsec/blsys/module/runcmd"
+    "github.com/Zeronetsec/blsys/module/optdir"
+    "github.com/Zeronetsec/blsys/module/install"
 )
 
 type CommandFunc func(

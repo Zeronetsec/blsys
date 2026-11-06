@@ -1,13 +1,13 @@
-// https://github.com/Zeronetsec/Blsys
+// https://github.com/Zeronetsec/blsys
 
 package copy
 
 import (
     "fmt"
     "os"
-    "github.com/Zeronetsec/Blsys/utils"
-    "github.com/Zeronetsec/Blsys/utils/color"
-    "github.com/Zeronetsec/Blsys/utils/invinput"
+    "github.com/Zeronetsec/blsys/utils"
+    "github.com/Zeronetsec/blsys/utils/color"
+    "github.com/Zeronetsec/blsys/utils/invinput"
 )
 
 func Execute(args []string) {

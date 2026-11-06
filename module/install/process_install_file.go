@@ -1,4 +1,4 @@
-// https://github.com/Zeronetsec/Blsys
+// https://github.com/Zeronetsec/blsys
 
 package install
 
@@ -7,7 +7,7 @@ import (
     "fmt"
     "strings"
     "bufio"
-    "github.com/Zeronetsec/Blsys/utils/color"
+    "github.com/Zeronetsec/blsys/utils/color"
 )
 
 func processInstallFile(filePath, binDir string) error {

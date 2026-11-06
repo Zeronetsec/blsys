@@ -1,11 +1,11 @@
-// https://github.com/Zeronetsec/Blsys
+// https://github.com/Zeronetsec/blsys
 
 package create
 
 import (
     "fmt"
     "os"
-    "github.com/Zeronetsec/Blsys/utils/color"
+    "github.com/Zeronetsec/blsys/utils/color"
 )
 
 func runner(kind, target string, fn func() error) {

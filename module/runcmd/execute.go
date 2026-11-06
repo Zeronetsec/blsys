@@ -1,4 +1,4 @@
-// https://github.com/Zeronetsec/Blsys
+// https://github.com/Zeronetsec/blsys
 
 package runcmd
 
@@ -7,8 +7,8 @@ import (
     "os"
     "strings"
     "os/exec"
-    "github.com/Zeronetsec/Blsys/utils/color"
-    "github.com/Zeronetsec/Blsys/utils/invinput"
+    "github.com/Zeronetsec/blsys/utils/color"
+    "github.com/Zeronetsec/blsys/utils/invinput"
 )
 
 func Execute(args []string) {

@@ -1,11 +1,11 @@
-// https://github.com/Zeronetsec/Blsys
+// https://github.com/Zeronetsec/blsys
 
 package utils
 
 import (
     "os"
     "fmt"
-    "github.com/Zeronetsec/Blsys/utils/color"
+    "github.com/Zeronetsec/blsys/utils/color"
 )
 
 func Error(err error) {

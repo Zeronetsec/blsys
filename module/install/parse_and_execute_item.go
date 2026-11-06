@@ -1,4 +1,4 @@
-// https://github.com/Zeronetsec/Blsys
+// https://github.com/Zeronetsec/blsys
 
 package install
 
@@ -6,7 +6,7 @@ import (
     "strings"
     "fmt"
     "path/filepath"
-    "github.com/Zeronetsec/Blsys/utils/color"
+    "github.com/Zeronetsec/blsys/utils/color"
 )
 
 func parseAndExecuteItem(

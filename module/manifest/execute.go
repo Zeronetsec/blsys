@@ -1,4 +1,4 @@
-// https://github.com/Zeronetsec/Blsys
+// https://github.com/Zeronetsec/blsys
 
 package manifest
 
@@ -6,7 +6,7 @@ import (
     "fmt"
     "os"
     "strings"
-    "github.com/Zeronetsec/Blsys/utils"
+    "github.com/Zeronetsec/blsys/utils"
 )
 
 func Execute(args []string) {

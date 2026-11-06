@@ -1,17 +1,17 @@
-// https://github.com/Zeronetsec/Blsys
+// https://github.com/Zeronetsec/blsys
 
 package help
 
 import (
     "fmt"
-    "github.com/Zeronetsec/Blsys/utils/color"
+    "github.com/Zeronetsec/blsys/utils/color"
 )
 
 func Execute(args []string) {
     fmt.Printf(
         "%s[ %sSenzdetta Build System & Scripting Utility %s]%s\n" +
         "%s[ %sDevelop by %s@Senzdetta %s(%sgithub.com/Senzdetta%s) ]%s\n" +
-        "%s[ %sPublished at %sgithub.com/Zeronetsec/Blsys %s]%s\n" +
+        "%s[ %sPublished at %sgithub.com/Zeronetsec/blsys %s]%s\n" +
         "%s[ %sLicensed under %sApache 2.0 %s]%s\n",
         color.DG, color.N, color.DG, color.N,
         color.DG, color.N, color.GG, color.DG, color.GG, color.DG, color.N,

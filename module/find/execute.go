@@ -1,4 +1,4 @@
-// https://github.com/Zeronetsec/Blsys
+// https://github.com/Zeronetsec/blsys
 
 package find
 
@@ -8,8 +8,8 @@ import (
     "strings"
     "io/fs"
     "path/filepath"
-    "github.com/Zeronetsec/Blsys/utils"
-    "github.com/Zeronetsec/Blsys/utils/invinput"
+    "github.com/Zeronetsec/blsys/utils"
+    "github.com/Zeronetsec/blsys/utils/invinput"
 )
 
 func Execute(args []string) {

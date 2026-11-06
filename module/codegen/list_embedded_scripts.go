@@ -1,4 +1,4 @@
-// https://github.com/Zeronetsec/Blsys
+// https://github.com/Zeronetsec/blsys
 
 package codegen
 
@@ -8,7 +8,7 @@ import (
     "strings"
     "path/filepath"
     "io/fs"
-    "github.com/Zeronetsec/Blsys/utils"
+    "github.com/Zeronetsec/blsys/utils"
 )
 
 func listEmbeddedScripts() {
