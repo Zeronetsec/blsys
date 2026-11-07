@@ -1,10 +1,10 @@
 # https://github.com/Zeronetsec/blsys
 
 function blsys::getargs() {
-    local manifest="${__root__}/manifest.meta"
+    local local_manifest="${__root__}/manifest.meta"
     local var="${1:-}"
 
-    command blsys --manifest "${manifest}" --get "${var}"
+    command blsys --manifest "${local_manifest}" --get "${var}"
     return ${?}
 }
 
