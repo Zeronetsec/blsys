@@ -20,7 +20,7 @@ source <(command blsys --codegen 'path/ensure_path')
 source <(command blsys --codegen 'path/pathvar')
 
 source <(command blsys --codegen 'runtime/strictmode')
-source <(command blsys --codegen 'runtime/traperreor')
+source <(command blsys --codegen 'runtime/traperror')
 source <(command blsys --codegen 'runtime/unbound_error')
 
 source <(command blsys --codegen 'system/cmdcheck')
