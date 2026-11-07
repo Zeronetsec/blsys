@@ -43,11 +43,12 @@ export __root__="$(
 export manifest="${__root__}/manifest.meta"; readonly manifest
 
 user_platform="$(command blsys --platform)"
-echo -ne "\x1b[1;34m[*] \x1b[0mChecking platform support for: \x1b[0;32m${user_platform}\x1b[0m"
+echo -ne "\x1b[1;34m[*] \x1b[0mChecking platform support: \x1b[0;32m${user_platform}\x1b[0m"
 if command blsys --platform --support "${manifest}"; then
     echo -e " \x1b[1;90m- \x1b[0mexit: \x1b[0;32m${?}\x1b[0m"
 else
     echo -e " \x1b[1;90m- \x1b[0merror: \x1b[1;31m${?}\x1b[0m"
+    echo -e "\x1b[!] \x1b[0mUnsupported platform: \x1b[0;32m${user_platform}\x1b[0m"
     exit 1
 fi
 
@@ -62,18 +63,16 @@ fi
 unset user_platform
 unset euid
 
-set -o errexit -o errtrace -o pipefail
-shopt -s failglob extglob shift_verbose
-
 if ((
-    BASH_VERSINFO[0] > 4 ||
-    (BASH_VERSINFO[0] == 4 && BASH_VERSINFO[1] >= 4)
+    BASH_VERSINFO[0] < 4 ||
+    (BASH_VERSINFO[0] == 4 && BASH_VERSINFO[1] < 4)
 )); then
-    shopt -s inherit_errexit
+    echo -e "\x1b[0;33m[!] \x1b[0mWarning bash version: \x1b[0;31m${BASH_VERSION} \x1b[1;90m< \x1b[0;32mv4.4\x1b[0m" >&2
 fi
 
 source <(command blsys --codegen 'import')
 
+echo -e "\x1b[1;34m[*] \x1b[0mCall: \x1b[0;32mblsys::installer\x1b[0m"
 source "${__root__}/.blsys/installer.sh"
 blsys::installer "${@}"
 exit 0
