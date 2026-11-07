@@ -1,6 +1,6 @@
 # https://github.com/Zeronetsec/blsys
 
-function blsys::cmdcheck() {
+function system::cmdcheck() {
     local cmd="${1:-}"
 
     if ! command -v ${cmd} &>/dev/null; then

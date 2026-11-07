@@ -1,12 +1,12 @@
 # https://github.com/Zeronetsec/blsys
 
-function blsys::makedir() {
+function iofs::makefile() {
     local input_data="${1}"
     if [[ -z "${input_data}" ]]; then
         return 1
     fi
 
-    local default_mode="0755"
+    local default_mode="0644"
     local line
     local mode
     local target
@@ -57,7 +57,7 @@ function blsys::makedir() {
 
             command blsys \
                 --create \
-                --type 'dir' \
+                --type 'file' \
                 --target "${target}" \
                 --mode "${mode}" \
                 --force

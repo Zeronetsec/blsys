@@ -1,6 +1,6 @@
 # https://github.com/Zeronetsec/blsys
 
-function blsys::automove_app() {
+function app::automove_app() {
     local appname="$(
         command blsys \
             --manifest "${__root__}/manifest.meta" \

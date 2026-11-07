@@ -1,6 +1,6 @@
 # https://github.com/Zeronetsec/blsys
 
-function blsys::argsfmt() {
+function format::argsfmt() {
     local args="${1:-'<noset>'}"
     local val="${2:-'<noset>'}"
 

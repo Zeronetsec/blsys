@@ -1,12 +1,12 @@
 # https://github.com/Zeronetsec/blsys
 
-function blsys::move() {
+function iofs::makelink() {
     local input_data="${1}"
     [[ -z "${input_data}" ]] && return 1
 
     local line
     local rest
-    local type_target
+    local mode
     local src
     local dest
     local inside_bracket=0
@@ -21,7 +21,7 @@ function blsys::move() {
             continue
         fi
 
-        if [[ "${line}" == ")" ]]; then
+        if [[ "${line}" == ")"* ]]; then
             inside_bracket=0
             continue
         fi
@@ -31,20 +31,16 @@ function blsys::move() {
             [[ "${line}" =~ ^# ]] && continue
 
             if [[ "${line}" == *"|"* ]]; then
-                type_target="${line%%|*}"
+                mode="${line%%|*}"
                 rest="${line#*|}"
             else
-                echo -e "\x1b[1;31m[!] \x1b[0mMissing type: \x1b[0;32m${line}\x1b[0m" >&2
-                return 1
+                mode="default"
+                rest="${line}"
             fi
 
-            type_target="${type_target#"${type_target%%[![:space:]]*}"}"
-            type_target="${type_target%"${type_target##*[![:space:]]}"}"
-
-            if [[ "${type_target}" != "file" && "${type_target}" != "dir" ]]; then
-                echo -e "\x1b[1;31m[!] \x1b[0mInvalid type: \x1b[0;32m${type_target}\x1b[0m" >&2
-                return 1
-            fi
+            mode="${mode#"${mode%%[![:space:]]*}"}"
+            mode="${mode%"${mode##*[![:space:]]}"}"
+            [[ -z "${mode}" ]] && mode="default"
 
             if [[ "${rest}" != *"->"* ]]; then
                 echo -e "\x1b[1;31m[!] \x1b[0mInvalid syntax: \x1b[0;32m${line}\x1b[0m" >&2
@@ -60,12 +56,20 @@ function blsys::move() {
             dest="${dest#"${dest%%[![:space:]]*}"}"
             dest="${dest%"${dest##*[![:space:]]}"}"
 
+            if [[ "${mode}" != "default" && ! "${mode}" =~ ^[0-7]{3,4}$ ]]; then
+                echo -e "\x1b[1;31m[!] \x1b[0mInvalid mode: \x1b[0;32m${mode} \x1b[0mfor \x1b[0;32m${src}\x1b[0m" >&2
+                return 1
+            fi
+
             if [[ -z "${src}" || -z "${dest}" ]]; then
                 echo -e "\x1b[1;31m[!] \x1b[0mSource/Dest is empty!" >&2
                 return 1
             fi
 
-            args=(--move --type "${type_target}" --source "${src}" --dest "${dest}" --force)
+            args=(--symlink --source "${src}" --dest "${dest}")
+            [[ "${mode}" != "default" ]] && args+=(--mode "${mode}")
+            args+=(--force)
+
             command blsys "${args[@]}"
         fi
     done <<< "${input_data}"

@@ -1,6 +1,6 @@
 # https://github.com/Zeronetsec/blsys
 
-function blsys::finsdep () {
+function package::finsdep () {
     local dep="${__root__}/packages.txt"
 
     if [[ -n "${1}" ]]; then

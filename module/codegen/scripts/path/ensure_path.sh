@@ -1,6 +1,6 @@
 # https://github.com/Zeronetsec/blsys
 
-function blsys::auto_prepare_path() {
+function path::ensure_path() {
     local -a target_path=(
         "$(command blsys --tmpdir)"
         "$(command blsys --optdir)"

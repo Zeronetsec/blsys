@@ -1,6 +1,6 @@
 # https://github.com/Zeronetsec/blsys
 
-function blsys::copy() {
+function iofs::copy() {
     local input_data="${1}"
     [[ -z "${input_data}" ]] && return 1
 

@@ -1,6 +1,6 @@
 # https://github.com/Zeronetsec/blsys
 
-function blsys::import() {
+function import() {
     local input_data="${1}"
     if [[ -z "${input_data}" ]]; then
         return 1

@@ -1,6 +1,6 @@
 # https://github.com/Zeronetsec/blsys
 
-function blsys::getargs() {
+function config::getmanifest() {
     local local_manifest="${__root__}/manifest.meta"
     local var="${1:-}"
 
