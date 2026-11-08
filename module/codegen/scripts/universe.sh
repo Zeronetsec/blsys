@@ -3,6 +3,8 @@
 source <(command blsys --codegen 'app/appvar')
 source <(command blsys --codegen 'app/automove_app')
 
+source <(command blsys --codegen 'args/takevalue')
+
 source <(command blsys --codegen 'config/getmanifest')
 
 source <(command blsys --codegen 'format/argsfmt')
