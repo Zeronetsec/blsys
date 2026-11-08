@@ -8,7 +8,7 @@ function package::finsdep () {
     fi
 
     if [[ ! -f "${dep}" ]]; then
-        echo -e "\x1b[1;31m[!] \x1b[0mFile: \x1b[0;32m${dep} \x1b[0mnot found!"
+        echo -e "\x1b[1;31m[!] \x1b[0mFile: \x1b[0;32m${dep} \x1b[0mnot found!" >&2
         return 1
     fi
 

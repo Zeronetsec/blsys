@@ -6,10 +6,10 @@ msgblsys="Updating"
 
 if [[ ! -f "${blsys}" ]]; then
     msgblsys="Installing"
-    echo -e "\x1b[1;31m[!] \x1b[0mBuild system: \x1b[0;32m${blsys} \x1b[0mNot found!"
+    echo -e "\x1b[0;33m[!] \x1b[0mBuild system: \x1b[0;32m${blsys} \x1b[0mNot found!" >&2
     if ! command -v go > /dev/null 2>&1; then
-        echo -e "\x1b[1;31m[!] \x1b[0mGolang is not installed!"
-        echo -e "\x1b[1;31m[!] \x1b[0mPlease installed first!"
+        echo -e "\x1b[1;31m[!] \x1b[0mGolang is not installed!" >&2
+        echo -e "\x1b[1;31m[!] \x1b[0mPlease installed first!" >&2
         exit 1
     fi
 fi
@@ -48,14 +48,14 @@ if command blsys --platform --support "${manifest}"; then
     echo -e " \x1b[1;90m- \x1b[0mexit: \x1b[0;32m${?}\x1b[0m"
 else
     echo -e " \x1b[1;90m- \x1b[0merror: \x1b[1;31m${?}\x1b[0m"
-    echo -e "\x1b[!] \x1b[0mUnsupported platform: \x1b[0;32m${user_platform}\x1b[0m"
+    echo -e "\x1b[1;31m[!] \x1b[0mUnsupported platform: \x1b[0;32m${user_platform}\x1b[0m" >&2
     exit 1
 fi
 
 euid="$(command blsys --geteuid)"
 if [[ "${user_platform}" != 'android' ]]; then
     if [[ ${euid} -eq 0 ]]; then
-        echo -e "\x1b[1;31m[!] \x1b[0mEUID: \x1b[0;32m${euid} \x1b[0mroot required!"
+        echo -e "\x1b[1;31m[!] \x1b[0mEUID: \x1b[0;32m${euid} \x1b[0mroot required!" >&2
         exit 1
     fi
 fi
